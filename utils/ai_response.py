@@ -32,4 +32,4 @@ def get_completion(user_message, system_message="You are a helpful assistant."):
         ],
         model=model
     )
-    return response
+    return response.choices[0].message.content
