@@ -5,11 +5,13 @@ from db import get_db,DATABASE_URL
 from sqlalchemy import create_engine
 import os
 from models import Base
+from routes.email_routes import router as email_router
 
 app = FastAPI()
 
 app.include_router(user_router)
 app.include_router(ai_response_router)
+app.include_router(email_router)
 #to create database
 
 engine=create_engine(DATABASE_URL)
